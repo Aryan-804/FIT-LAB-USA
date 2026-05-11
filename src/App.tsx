@@ -264,7 +264,7 @@ const Hero = () => {
     <section 
       className="relative min-h-screen pt-[120px] flex items-start overflow-hidden bg-cover bg-center"
       style={{ 
-        backgroundImage: `url('ascent_background.png')`,
+        backgroundImage: `url('/ascent_background.png')`,
       }}
     >
       {/* Overlays */}
@@ -589,8 +589,8 @@ const TestimonialsSection = () => {
 
 const TrainersSection = () => {
   const trainers = [
-    { name: "Coach Tristan", role: "Head Performance Architect", image: "coach_tristan.png" },
-    { name: "Coach Elena", role: "Youth Athletic Development", image: "coach_elena.png" },
+    { name: "Coach Tristan", role: "Head Performance Architect", image: "/coach_tristan.png" },
+    { name: "Coach Elena", role: "Youth Athletic Development", image: "/coach_elena.png" },
     { name: "Coach Mike", role: "Elite Strength & Conditioning", image: "https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&q=80" },
   ];
 
@@ -771,7 +771,7 @@ const RedMarquee = () => {
 const GrandCTA = () => {
   return (
     <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-fl-bg">
-      <img src="ascent_background.png" alt="Fit Lab Team" className="absolute inset-0 w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
+      <img src="/ascent_background.png" alt="Fit Lab Team" className="absolute inset-0 w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
       <div className="absolute inset-0 bg-gradient-to-b from-fl-bg via-transparent to-fl-bg" />
       <div className="container relative z-10 text-center px-6">
         <motion.div
