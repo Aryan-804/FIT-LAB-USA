@@ -179,7 +179,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 py-6">
+    <nav className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 py-6" style={{ fontSize: '13px' }}>
       <div className={`container mx-auto max-w-7xl h-[64px] bg-fl-bg/90 backdrop-blur-xl border border-white/10 rounded-b-[20px] transition-all duration-500 flex items-center justify-between px-8 shadow-2xl`}>
         <a href="/" className="flex items-center gap-1 text-2xl font-display font-black tracking-tighter">
           <span>FIT LAB</span>
@@ -281,7 +281,7 @@ const Hero = () => {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-white text-xl md:text-3xl lg:text-4xl font-normal mb-4 text-center lg:text-left tracking-tight"
+            className="text-white text-xl md:text-3xl lg:text-4xl font-bold mb-4 text-center lg:text-left tracking-tight"
           >
             Mansfield's premier destination where athletes come to
           </motion.p>
@@ -294,7 +294,10 @@ const Hero = () => {
             transition={{ delay: 0.8 }}
             className="mt-12 flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
           >
-            <button className="bg-fl-gold hover:bg-fl-gold-hover text-black font-black uppercase tracking-widest px-12 py-5 transition-all text-sm rounded-[4px]">
+            <button 
+              className="bg-fl-gold hover:bg-fl-gold-hover text-black font-black uppercase tracking-widest px-12 py-5 transition-all text-sm rounded-[4px]"
+              style={{ height: '60px', paddingLeft: '47px', paddingRight: '44px', marginLeft: '0px', borderStyle: 'solid', borderWidth: '2px', borderRadius: '26px', fontFamily: 'Arial' }}
+            >
               Start Training
             </button>
             <button className="text-white font-bold uppercase tracking-widest flex items-center gap-2 group text-sm">
@@ -332,12 +335,13 @@ const BrandStory = () => {
 
   return (
     <section ref={containerRef} className="py-32 bg-fl-bg px-6 overflow-hidden">
-      <div className="container mx-auto">
+      <div className="container mx-auto" style={{ fontFamily: 'Georgia', fontSize: '15px', lineHeight: '20px' }}>
         <motion.h2 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-[clamp(3.2rem,8.5vw,8rem)] font-black text-white/80 mb-20 leading-[0.9] max-w-5xl"
+          style={{ fontSize: '64.32px' }}
         >
           A place built for champions.
         </motion.h2>
@@ -348,10 +352,17 @@ const BrandStory = () => {
             const end = (i + 1) * 0.12 + 0.05;
             const opacity = useTransform(scrollYProgress, [start, end], [0.08, 1]);
             
+            const pStyles = [
+              { fontSize: '36.6px' },
+              { fontSize: '35.6px' },
+              { fontSize: '35.6px' },
+              { fontSize: '32.6px', lineHeight: '37.62px' }
+            ];
+            
             return (
               <motion.p 
                 key={i}
-                style={{ opacity }}
+                style={{ opacity, ...pStyles[i] }}
                 className="text-[clamp(2rem,5vw,4.5rem)] font-black leading-[0.95] text-white tracking-tighter"
               >
                 {chunk}
@@ -382,7 +393,12 @@ const SignatureServices = () => {
                 <img src={service.image} alt={service.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-10 left-10 right-10">
-                  <h3 className="text-3xl font-black text-white italic tracking-tighter mb-2">{service.title}</h3>
+                  <h3 
+                    className="text-3xl font-black text-white italic tracking-tighter mb-2"
+                    style={{ borderColor: '#683c3c', color: '#f7efee', fontFamily: 'Times New Roman', textAlign: 'center', fontStyle: 'italic', textDecorationLine: 'none', paddingTop: '0px' }}
+                  >
+                    {service.title}
+                  </h3>
                   <p className="text-white/60 text-xs font-bold uppercase tracking-[0.2em]">{service.desc}</p>
                 </div>
               </div>
@@ -435,7 +451,6 @@ const FacilityCard = ({ facility, index }: FacilityCardProps) => {
         src={facility.image} 
         alt={facility.title}
         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
-        referrerPolicy="no-referrer"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-8">
         <h3 className="text-xl md:text-2xl font-black text-white mb-2">{facility.title}</h3>
@@ -616,7 +631,7 @@ const TrainersSection = () => {
               className="flex flex-col items-center group cursor-pointer"
             >
               <div className="relative w-full aspect-square overflow-hidden rounded-[40px] mb-8 border border-white/5 transition-all duration-700 group-hover:border-fl-gold group-hover:shadow-[0_0_50px_rgba(212,175,55,0.1)]">
-                <img src={trainer.image} alt={trainer.name} className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000" referrerPolicy="no-referrer" />
+                <img src={trainer.image} alt={trainer.name} className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <h4 className="text-2xl font-black italic uppercase tracking-tighter group-hover:text-fl-gold transition-colors">{trainer.name}</h4>
@@ -634,7 +649,7 @@ const FAQSection = () => {
   return (
     <section className="py-24 bg-fl-bg px-6" id="faq">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl md:text-6xl font-black mb-16 text-center italic tracking-tighter">Protocol FAQ</h2>
+        <h2 className="text-4xl md:text-6xl font-black mb-16 text-center italic tracking-tighter" style={{ fontSize: '46.36px' }}>Protocol FAQ</h2>
         <div className="space-y-4">
           {FAQS.map((faq, i) => (
             <div key={i} className="border-b border-fl-border group">
@@ -776,7 +791,7 @@ const RedMarquee = () => {
 const GrandCTA = () => {
   return (
     <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-fl-bg">
-      <img src={ascentBackground} alt="Fit Lab Team" className="absolute inset-0 w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
+      <img src={ascentBackground} alt="Fit Lab Team" className="absolute inset-0 w-full h-full object-cover opacity-60" />
       <div className="absolute inset-0 bg-gradient-to-b from-fl-bg via-transparent to-fl-bg" />
       <div className="container relative z-10 text-center px-6">
         <motion.div
