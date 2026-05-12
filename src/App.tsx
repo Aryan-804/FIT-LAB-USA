@@ -1,10 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 
-import ascentBackground from './assets/ascent_background.png';
-import coachElena from './assets/coach_elena.png';
-import coachTristan from './assets/coach_tristan.png';
-
 import { 
   Menu, 
   X, 
@@ -269,7 +265,7 @@ const Hero = () => {
     <section 
       className="relative min-h-screen pt-[120px] flex items-start overflow-hidden bg-cover bg-center"
       style={{ 
-        backgroundImage: `url(${ascentBackground})`,
+        backgroundImage: `url("https://raw.githubusercontent.com/Aryan-804/FIT-LAB-USA/main/ascent_background.png")`,
       }}
     >
       {/* Overlays */}
@@ -609,8 +605,8 @@ const TestimonialsSection = () => {
 
 const TrainersSection = () => {
   const trainers = [
-    { name: "Coach Tristan", role: "Head Performance Architect", image: coachTristan },
-    { name: "Coach Elena", role: "Youth Athletic Development", image: coachElena },
+    { name: "Coach Tristan", role: "Head Performance Architect", image: "https://raw.githubusercontent.com/Aryan-804/FIT-LAB-USA/main/coach_tristan.png" },
+    { name: "Coach Elena", role: "Youth Athletic Development", image: "https://raw.githubusercontent.com/Aryan-804/FIT-LAB-USA/main/coach_elena.png" },
     { name: "Coach Mike", role: "Elite Strength & Conditioning", image: "https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&q=80" },
   ];
 
@@ -791,7 +787,7 @@ const RedMarquee = () => {
 const GrandCTA = () => {
   return (
     <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-fl-bg">
-      <img src={ascentBackground} alt="Fit Lab Team" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+      <img src="https://raw.githubusercontent.com/Aryan-804/FIT-LAB-USA/main/ascent_background.png" alt="Fit Lab Team" className="absolute inset-0 w-full h-full object-cover opacity-60" />
       <div className="absolute inset-0 bg-gradient-to-b from-fl-bg via-transparent to-fl-bg" />
       <div className="container relative z-10 text-center px-6">
         <motion.div
