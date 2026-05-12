@@ -265,7 +265,7 @@ const Hero = () => {
     <section 
       className="relative min-h-screen pt-[120px] flex items-start overflow-hidden bg-cover bg-center"
       style={{ 
-        backgroundImage: `url("https://raw.githubusercontent.com/Aryan-804/FIT-LAB-USA/main/ascent_background.png")`,
+        backgroundImage: `url(https://raw.githubusercontent.com/Aryan-804/FIT-LAB-USA/main/ascent_background.png)`,
       }}
     >
       {/* Overlays */}
