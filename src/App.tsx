@@ -269,7 +269,7 @@ const Hero = () => {
     <section 
       className="relative min-h-screen pt-[120px] flex items-start overflow-hidden bg-cover bg-center"
       style={{ 
-        backgroundImage: `url("${ascentBackground}")`,
+        backgroundImage: `url(${ascentBackground})`,
       }}
     >
       {/* Overlays */}
